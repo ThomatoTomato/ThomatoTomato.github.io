@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding and responsive viewport scaling for mobile devices -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thomas Wilskow Thorbjørnsen</title>
+
+  <!-- Shared stylesheet (for pages in subfolders like Research/, use "../style.css") -->
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <!-- Two-column grid container: left sidebar (nav) + right main column (.content) -->
+  <div class="layout">
+    <!-- Sidebar navigation card; aria-label helps screen readers identify this nav region -->
+    <nav class="card" aria-label="Explore files">
+      <!-- class="current" highlights the active page; move it to the matching link on other pages -->
+      <a href="../index.html">Home</a>
+      <a href="../Research/research.html">Research</a>
+      <a href="../Teaching/teaching.html">Teaching</a>
+      <a class="current">Talks and Activities</a>
+      <!-- <a href="resume.pdf">Resume</a> -->
+    </nav>
+
+    <!-- Right column: stacks the name card above the main text card (and any future .card sections) -->
+    <div class="content">
+      <header class="card">
+        <h1>Thomas Wilskow Thorbjørnsen</h1>
+      </header>
+
+      <main class="card">
+      </main>
+    </div>
+  </div>
+</body>
+</html>

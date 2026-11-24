@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding and responsive viewport scaling for mobile devices -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thomas Wilskow Thorbjørnsen</title>
+
+  <!-- Shared stylesheet (for pages in subfolders like Research/, use "../style.css") -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Two-column grid container: left sidebar (nav) + right main column (.content) -->
+  <div class="layout">
+    <!-- Sidebar navigation card; aria-label helps screen readers identify this nav region -->
+    <nav class="card" aria-label="Explore files">
+      <!-- class="current" highlights the active page; move it to the matching link on other pages -->
+      <a class="current">Home</a>
+      <a href="Research/research.html">Research</a>
+      <a href="Teaching/teaching.html">Teaching</a>
+      <!-- <a href="Talks and Activities/talks.html">Talks and Activities</a> -->
+      <!-- <a href="resume.pdf">Resume</a> -->
+    </nav>
+
+    <!-- Right column: stacks the name card above the main text card (and any future .card sections) -->
+    <div class="content">
+      <header class="card">
+        <h1>Thomas Wilskow Thorbjørnsen</h1>
+      </header>
+
+      <main class="card">
+        <p>Hello! My name is Thomas, and I am a Ph.D. candidate at the University of Western Ontario (UWO), supervised by <a href="https://jdc.math.uwo.ca/">Professor Dan Christensen</a>. I think about homotopy type theory, synthetic algebraic geometry, and constructive homological algebra.</p>
+
+        <p>My work is sometimes formalized in <a href="https://rocq-prover.org/">Rocq/Coq</a>. Here, I mainly contribute to the <a href="https://github.com/HoTT/Coq-HoTT">Coq-HoTT</a> library. My GitHub handle is <a href="https://github.com/ThomatoTomato">ThomatoTomato</a>.</p>
+
+        <p>I completed my bachelor's and master's degree at the Norwegian University of Science and Technology in 2023, under the supervision of <a href="https://opperman.folk.ntnu.no/index.html">Professor Steffen Oppermann</a>.</p>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

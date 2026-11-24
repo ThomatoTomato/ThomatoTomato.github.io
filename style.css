@@ -1,0 +1,178 @@
+/*
+ * Color palette (CSS custom properties available anywhere via var(--name))
+ * --color-1: hover/accent highlight (gold)
+ * --color-2: primary text (off-white)
+ * --color-3: links (light teal)
+ * --color-4: borders and background tile pattern (steel blue)
+ * --color-5: background and card fill (deep navy)
+ */
+:root {
+  --color-1: #FFD700;
+  --color-2: #f1faee;
+  --color-3: #A8DADC;
+  --color-4: #457b9d;
+  --color-5: #01274C;
+}
+
+/* Base canvas color behind the tiled pattern */
+html {
+  background-color: var(--color-5);
+}
+
+/* Centers the whole page layout within a max width of 56rem (~896px) */
+body {
+  color: var(--color-2);
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  max-inline-size: 56rem;
+  margin-inline: auto;
+  padding: 2rem 1.5rem;
+}
+
+/*
+ * Fixed full-screen tiled background pattern.
+ * Uses the SVG as a CSS mask so the pattern automatically adopts --color-4.
+ * z-index: -1 keeps it behind all page content; pointer-events: none prevents blocking clicks.
+ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--color-4);
+  /* Change the url of the following two fields to change tiling. */
+  -webkit-mask-image: url("tile.svg");
+  mask-image: url("tile.svg");
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-size: 100px 100px;
+  mask-size: 100px 100px;
+}
+
+/* Reusable card container for nav, header, main, and any future <section class="card"> */
+.card {
+  background-color: var(--color-5);
+  border: 1.5px solid var(--color-4);
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* Adds vertical spacing between stacked cards in the same column */
+.card + .card {
+  margin-block-start: 1.5rem;
+}
+
+/* Trim extra outer margins from the first/last element inside a card */
+.card > :first-child {
+  margin-block-start: 0;
+}
+
+.card > :last-child {
+  margin-block-end: 0;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-weight: 500;
+  margin-block-end: 0;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.35rem;
+  margin-block: 0 0.75rem;
+  color: var(--color-3);
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-block: 1.25rem 0.5rem;
+}
+
+ul, ol {
+  padding-inline-start: 1.25rem;
+  margin-block: 0.5rem;
+}
+
+li + li {
+  margin-block-start: 0.5rem;
+}
+
+/* Two-column list for term + courses entries */
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.5rem;
+  list-style: none;
+  padding-inline-start: 0;
+  margin-block: 0.5rem;
+}
+
+.course-list li + li {
+  margin-block-start: 0; /* Override global li + li spacing so grid rows align */
+}
+
+.course-list .term {
+  display: block;
+  font-weight: 600;
+  color: var(--color-3);
+}
+
+@media (max-width: 42rem) {
+  .course-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Desktop two-column layout: 12.5rem left sidebar + flexible right content column */
+.layout {
+  display: grid;
+  grid-template-columns: 12.5rem 1fr;
+  align-items: start; /* Keep sidebar sized to its content rather than stretching full height */
+  gap: 1.5rem;
+}
+
+/* Vertical link list inside the sidebar nav */
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+/* Responsive breakpoint: stack into one column and center nav links horizontally on small screens */
+@media (max-width: 42rem) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-wrap: balance; /* Distribute wrapped links evenly where supported */
+    justify-content: center;
+    gap: 0.5rem 1rem;
+  }
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  color: var(--color-3);
+}
+
+a:hover {
+  color: var(--color-1);
+  text-decoration: underline;
+}
+
+/* Highlights the link for the currently active page */
+.current {
+  font-weight: 700;
+  color: var(--color-2);
+}

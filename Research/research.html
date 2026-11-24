@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding and responsive viewport scaling for mobile devices -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thomas Wilskow Thorbjørnsen</title>
+
+  <!-- Shared stylesheet (for pages in subfolders like Research/, use "../style.css") -->
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <!-- Two-column grid container: left sidebar (nav) + right main column (.content) -->
+  <div class="layout">
+    <!-- Sidebar navigation card; aria-label helps screen readers identify this nav region -->
+    <nav class="card" aria-label="Explore files">
+      <!-- class="current" highlights the active page; move it to the matching link on other pages -->
+      <a href="../index.html">Home</a>
+      <a class="current">Research</a>
+      <a href="../Teaching/teaching.html">Teaching</a>
+      <!-- <a href="../Talks and Activities/talks.html">Talks and Activities</a> -->
+      <!-- <a href="resume.pdf">Resume</a> -->
+    </nav>
+
+    <!-- Right column: stacks the name card above the main text card (and any future .card sections) -->
+    <div class="content">
+      <header class="card">
+        <h1>Thomas Wilskow Thorbjørnsen</h1>
+      </header>
+
+      <!-- Current research interests -->
+      <main class="card">
+        <h2>Research Interests</h2>
+        <p>
+          Homotopy Type Theory, Synthetic Algebraic Geometry, Constructive Homological Algebra, Univalent Foundations, Formalization of Mathematics, Higher Category Theory
+        </p>
+      </main>
+
+      <!-- Publications and preprints -->
+      <!-- <section class="card">
+        <h2>Publications &amp; Preprints</h2>
+        <p><em>In pure mathematics, authors are listed alphabetically by convention.</em></p>
+        <h3>Preprints &amp; Manuscripts in Preparation</h3>
+        <ol>
+          <li>
+            F. Cherubini, J. D. Christensen, F. Endres, H. Moeneclaey, and T. W. Thorbjørnsen,
+            <em>Finitely Adequate Modules in Synthetic Algebraic Geometry</em>,
+            In preparation.
+          </li>
+          <li>
+            J. D. Christensen and T. W. Thorbjørnsen,
+            <em>Diagram Chasing in Type Theory</em> (Working Title),
+            In preparation.<br>
+            Formalization: Upstreamed to <a href="https://github.com/HoTT/Coq-HoTT">HoTT/Coq-HoTT</a> (PR #2333, PR #2336, PR #2344).
+          </li>
+          <li>
+            J. D. Christensen and T. W. Thorbjørnsen,
+            <em>Derived Functors in Homotopy Type Theory</em>,
+            In preparation.
+          </li>
+        </ol>
+      </section> -->
+
+      <!-- Formalization -->
+      <section class="card">
+        <h2>Formalization</h2>
+        <p>
+          <strong>In Coq / Rocq </strong><br>
+        </p>
+
+        <!-- <h3>Upstream Library Contributions: <a href="https://github.com/HoTT/Coq-HoTT">HoTT/Coq-HoTT</a></h3>
+        <p>Contributions to the official Homotopy Type Theory library for Coq / Rocq:</p> -->
+        <ul>
+          <li> Diagram Chasing in Wild Categories (<a href="https://github.com/HoTT/Coq-HoTT/pull/2333">#2333</a>, <a href="https://github.com/HoTT/Coq-HoTT/pull/236">#2336</a>, <a href="https://github.com/HoTT/Coq-HoTT/pull/2344">#2344</a>) </li>
+          <li> Biproducts and Categorical Limits (<a href="https://github.com/HoTT/Coq-HoTT/pull/2016">#2016</a>) </li>
+          <li> Kraus and von Raumer’s Induction Principle on Path-Spaces (<a href="https://github.com/HoTT/Coq-HoTT/pull/2143">#2143</a>, <a href="https://github.com/HoTT/Coq-HoTT/pull/2147">#2147</a>) </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
