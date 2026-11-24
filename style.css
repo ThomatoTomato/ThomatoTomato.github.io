@@ -23,6 +23,7 @@ html {
 body {
   color: var(--color-2);
   font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
   line-height: 1.6;
   max-inline-size: 56rem;
   margin-inline: auto;
@@ -78,6 +79,7 @@ header {
 }
 
 h1 {
+  font-size: 1.5rem;
   font-weight: 500;
   margin-block-end: 0;
 }
@@ -104,8 +106,15 @@ li + li {
   margin-block-start: 0.5rem;
 }
 
-/* Two-column list for term + courses entries */
-.course-list {
+/* Single-column list for label + entries */
+.single-list {
+  list-style: none;
+  padding-inline-start: 0;
+  margin-block: 0.5rem;
+}
+
+/* Two-column list for label + entries */
+.block-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem 1.5rem;
@@ -114,18 +123,18 @@ li + li {
   margin-block: 0.5rem;
 }
 
-.course-list li + li {
+.block-list li + li {
   margin-block-start: 0; /* Override global li + li spacing so grid rows align */
 }
 
-.course-list .term {
+.label {
   display: block;
   font-weight: 600;
   color: var(--color-3);
 }
 
 @media (max-width: 42rem) {
-  .course-list {
+  .block-list {
     grid-template-columns: 1fr;
   }
 }
